@@ -45,31 +45,36 @@ def update_button(btn):
         btn.config(text="O")
     cnt += 1
     btn.configure(state=DISABLED)
+    if cnt!=0:  # don't check win right at beginning
+        check_win()
 
     
 def check_win():
     
     # check for horizontal win
     if btn1['text'] == btn2['text'] == btn3['text']:
-        messagebox.showinfo("Title", "We have a winner!")
+        return True
     elif btn4['text'] == btn5['text'] == btn6['text']:
-        messagebox.showinfo("Title", "We have a winner!")
+        return True
     elif btn7['text'] == btn8['text'] == btn9['text']:
-        messagebox.showinfo("Title", "We have a winner!")
+        return True
 
     # check for vertical win 
-    if btn1['text'] == btn4['text'] == btn7['text']:
-        messagebox.showinfo("Title", "We have a winner!")
+    elif btn1['text'] == btn4['text'] == btn7['text']:
+        return True
     elif btn2['text'] == btn5['text'] == btn8['text']:
-        messagebox.showinfo("Title", "We have a winner!")
+        return True
     elif btn3['text'] == btn6['text'] == btn9['text']:
-        messagebox.showinfo("Title", "We have a winner!")
+        return True
 
     # check for diagonal win 
-    if btn1['text'] == btn5['text'] == btn9['text']:
-        messagebox.showinfo("Title", "We have a winner!")
+    elif btn1['text'] == btn5['text'] == btn9['text']:
+        return True
     elif btn3['text'] == btn2['text'] == btn7['text']:
-        messagebox.showinfo("Title", "We have a winner!")
+        return True
+    
+    else:
+        return False
         
 
 
