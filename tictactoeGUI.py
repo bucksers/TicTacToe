@@ -9,32 +9,45 @@ root.title('Tic Tac Toe')
 cnt=0
 myFont = font.Font(size = 40)
 
+# make btns
 btn1 = tk.Button(root, text = " ", height=3, width=5)
-btn1.config(command=lambda: update_button(btn1))
 btn2 = tk.Button(root, text = " ", height=3, width=5)
-btn2.configure(command=lambda: update_button(btn2))
 btn3 = tk.Button(root, text = " ", height=3, width=5)
-btn3.configure(command=lambda: update_button(btn3))
 btn4 = tk.Button(root, text = " ", height=3, width=5)
-btn4.configure(command=lambda: update_button(btn4))
 btn5 = tk.Button(root, text = " ", height=3, width=5)
-btn5.configure(command=lambda: update_button(btn5))
 btn6 = tk.Button(root, text = " ", height=3, width=5)
-btn6.configure(command=lambda: update_button(btn6))
 btn7 = tk.Button(root, text = " ", height=3, width=5)
-btn7.configure(command=lambda: update_button(btn7))
 btn8 = tk.Button(root, text = " ", height=3, width=5)
-btn8.configure(command=lambda: update_button(btn8))
 btn9 = tk.Button(root, text = " ", height=3, width=5)
+
+# grid btns
+btn1.grid(row = 0, column = 0)
+btn2.grid(row = 0, column = 1)
+btn3.grid(row = 0, column = 2)
+btn4.grid(row = 1, column = 0)
+btn5.grid(row = 1, column = 1)
+btn6.grid(row = 1, column = 2)
+btn7.grid(row = 2, column = 0)
+btn8.grid(row = 2, column = 1)
+btn9.grid(row = 2, column = 2)
+
+# add command functionality
+btn1.configure(command=lambda: update_button(btn1))
+btn2.configure(command=lambda: update_button(btn2))
+btn3.configure(command=lambda: update_button(btn3))
+btn4.configure(command=lambda: update_button(btn4))
+btn5.configure(command=lambda: update_button(btn5))
+btn6.configure(command=lambda: update_button(btn6))
+btn7.configure(command=lambda: update_button(btn7))
+btn8.configure(command=lambda: update_button(btn8))
 btn9.configure(command=lambda: update_button(btn9))
 
+# create list of btns
 btnList = [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9]
 
+# use font
 for btn in btnList:
     btn['font'] = myFont
-    for i in range(3):
-        for j in range(3):
-            btn.grid(row = i, column = j)
 
 def update_button(btn):
     global cnt 
