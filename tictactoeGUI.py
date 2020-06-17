@@ -14,6 +14,7 @@ def update_button(btn):
     else:
         btn.config(text="O")
     cnt += 1
+    btn.configure(state=DISABLED)
 
 # NEXT TIME: disable button after changing it (in update_button)
     # Check for win
