@@ -82,6 +82,7 @@ def check_x_win():
         btn3['text'] != " " and btn3['text'] == btn5['text'] == btn7['text']
     ):
         messagebox.showinfo("Winner", "Player X wins!")
+        root.quit()
 
 
 # check for Player O win
@@ -103,6 +104,7 @@ def check_o_win():
         btn3['text'] != " " and btn3['text'] == btn5['text'] == btn7['text']
     ):
         messagebox.showinfo("Winner", "Player O wins!")
+        root.quit()
 
 
 
