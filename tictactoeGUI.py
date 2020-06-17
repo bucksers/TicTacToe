@@ -49,6 +49,8 @@ btnList = [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9]
 for btn in btnList:
     btn['font'] = myFont
 
+
+# update button
 def update_button(btn):
     global cnt 
     if cnt%2 == 0:
@@ -56,11 +58,14 @@ def update_button(btn):
         check_x_win()
     else:
         btn.config(text="O")
+        check_o_win()
     cnt += 1
     btn.configure(state=DISABLED)
 
-    
+
+# check for Player X win 
 def check_x_win():
+
     # check for horizontal win
     if (
         btn1['text'] != " " and btn1['text'] == btn2['text'] == btn3['text'] or \
@@ -78,6 +83,26 @@ def check_x_win():
     ):
         messagebox.showinfo("Winner", "Player X wins!")
 
+
+# check for Player O win
+def check_o_win():
+
+    # check for horizontal win
+    if (
+        btn1['text'] != " " and btn1['text'] == btn2['text'] == btn3['text'] or \
+        btn4['text'] != " " and btn4['text'] == btn5['text'] == btn6['text'] or \
+        btn7['text'] != " " and btn7['text'] == btn8['text'] == btn9['text'] or \
+
+    # check for vertical win 
+        btn1['text'] != " " and btn1['text'] == btn4['text'] == btn7['text'] or \
+        btn2['text'] != " " and btn2['text'] == btn5['text'] == btn8['text'] or \
+        btn3['text'] != " " and btn3['text'] == btn6['text'] == btn9['text'] or \
+
+    # check for diagonal win 
+        btn1['text'] != " " and btn1['text'] == btn5['text'] == btn9['text'] or \
+        btn3['text'] != " " and btn3['text'] == btn5['text'] == btn7['text']
+    ):
+        messagebox.showinfo("Winner", "Player O wins!")
 
 
 
