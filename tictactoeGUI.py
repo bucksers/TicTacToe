@@ -1,8 +1,9 @@
 import tkinter as tk
 from tkinter import *
+from tkinter import messagebox
+
 
 root = Tk()
-
 root.geometry('300x250')  # size window
 root.title('Tic Tac Toe')  
 cnt=0
@@ -35,6 +36,7 @@ btn9 = tk.Button(root, text = " ", height=3, width=5)
 btn9.grid(row = 2, column = 2)
 btn9.configure(command=lambda: update_button(btn9))
 
+
 def update_button(btn):
     global cnt 
     if cnt%2 == 0:
@@ -44,11 +46,31 @@ def update_button(btn):
     cnt += 1
     btn.configure(state=DISABLED)
 
-# NEXT TIME: disable button after changing it (in update_button)
-    # Check for win
     
 def check_win():
-    pass
+    
+    # check for horizontal win
+    if btn1['text'] == btn2['text'] == btn3['text']:
+        messagebox.showinfo("Title", "We have a winner!")
+    elif btn4['text'] == btn5['text'] == btn6['text']:
+        messagebox.showinfo("Title", "We have a winner!")
+    elif btn7['text'] == btn8['text'] == btn9['text']:
+        messagebox.showinfo("Title", "We have a winner!")
+
+    # check for vertical win 
+    if btn1['text'] == btn4['text'] == btn7['text']:
+        messagebox.showinfo("Title", "We have a winner!")
+    elif btn2['text'] == btn5['text'] == btn8['text']:
+        messagebox.showinfo("Title", "We have a winner!")
+    elif btn3['text'] == btn6['text'] == btn9['text']:
+        messagebox.showinfo("Title", "We have a winner!")
+
+    # check for diagonal win 
+    if btn1['text'] == btn5['text'] == btn9['text']:
+        messagebox.showinfo("Title", "We have a winner!")
+    elif btn3['text'] == btn2['text'] == btn7['text']:
+        messagebox.showinfo("Title", "We have a winner!")
+        
 
 
 root.mainloop()
