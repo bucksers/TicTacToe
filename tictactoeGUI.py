@@ -53,39 +53,30 @@ def update_button(btn):
     global cnt 
     if cnt%2 == 0:
         btn.config(text="X")
+        check_x_win()
     else:
         btn.config(text="O")
     cnt += 1
     btn.configure(state=DISABLED)
-    check_win()
 
     
-def check_win():
-
+def check_x_win():
     # check for horizontal win
-    if btn1['text'] != " " and btn1['text'] == btn2['text'] == btn3['text']:
-        messagebox.showinfo("Winner!")
-    elif btn4['text'] != " " and btn4['text'] == btn5['text'] == btn6['text']:
-        messagebox.showinfo("Winner!")
-    elif btn7['text'] != " " and btn7['text'] == btn8['text'] == btn9['text']:
-        messagebox.showinfo("Winner!")
+    if (
+        btn1['text'] != " " and btn1['text'] == btn2['text'] == btn3['text'] or \
+        btn4['text'] != " " and btn4['text'] == btn5['text'] == btn6['text'] or \
+        btn7['text'] != " " and btn7['text'] == btn8['text'] == btn9['text'] or \
 
     # check for vertical win 
-    elif btn1['text'] != " " and btn1['text'] == btn4['text'] == btn7['text']:
-        messagebox.showinfo("Winner!")
-    elif btn2['text'] != " " and btn2['text'] == btn5['text'] == btn8['text']:
-        messagebox.showinfo("Winner!")
-    elif btn3['text'] != " " and btn3['text'] == btn6['text'] == btn9['text']:
-        messagebox.showinfo("Winner!")
+        btn1['text'] != " " and btn1['text'] == btn4['text'] == btn7['text'] or \
+        btn2['text'] != " " and btn2['text'] == btn5['text'] == btn8['text'] or \
+        btn3['text'] != " " and btn3['text'] == btn6['text'] == btn9['text'] or \
 
     # check for diagonal win 
-    elif btn1['text'] != " " and btn1['text'] == btn5['text'] == btn9['text']:
-        messagebox.showinfo("Winner!")
-    elif btn3['text'] != " " and btn3['text'] == btn5['text'] == btn7['text']:
-        messagebox.showinfo("Winner!")
-    
-    else:
-        return False
+        btn1['text'] != " " and btn1['text'] == btn5['text'] == btn9['text'] or \
+        btn3['text'] != " " and btn3['text'] == btn5['text'] == btn7['text']
+    ):
+        messagebox.showinfo("Winner", "Player X wins!")
 
 
 
