@@ -9,6 +9,7 @@ root.title('Tic Tac Toe')
 cnt=0
 myFont = font.Font(size = 40)
 
+
 btn1 = tk.Button(root, text = " ", height=3, width=5)
 btn1.grid(row = 0, column = 0)
 btn1.config(command=lambda: update_button(btn1))
