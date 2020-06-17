@@ -49,10 +49,6 @@ def update_button(btn):
 
     
 def check_win():
-    
-    # check if count=0; if so, return False
-    if cnt<2:
-        return False
 
     # check for horizontal win
     if btn1['text'] != "  " and btn1['text'] == btn2['text'] == btn3['text']:
