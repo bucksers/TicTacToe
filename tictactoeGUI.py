@@ -4,7 +4,7 @@ from tkinter import messagebox
 
 
 root = Tk()
-root.geometry('300x250')  # size window
+root.geometry('300x250')  
 root.title('Tic Tac Toe')  
 cnt=0
 
@@ -45,37 +45,41 @@ def update_button(btn):
         btn.config(text="O")
     cnt += 1
     btn.configure(state=DISABLED)
-    if cnt!=0:  # don't check win right at beginning
-        check_win()
+    check_win()
 
     
 def check_win():
     
+    # check if count=0; if so, return False
+    if cnt<2:
+        return False
+
     # check for horizontal win
-    if btn1['text'] == btn2['text'] == btn3['text']:
-        return True
-    elif btn4['text'] == btn5['text'] == btn6['text']:
-        return True
-    elif btn7['text'] == btn8['text'] == btn9['text']:
-        return True
+    if btn1['text'] != "  " and btn1['text'] == btn2['text'] == btn3['text']:
+        messagebox.showinfo("Winner!")
+    elif btn4['text'] != "  " and btn4['text'] == btn5['text'] == btn6['text']:
+        messagebox.showinfo("Winner!")
+    elif btn7['text'] != "  " and btn7['text'] == btn8['text'] == btn9['text']:
+        messagebox.showinfo("Winner!")
 
     # check for vertical win 
-    elif btn1['text'] == btn4['text'] == btn7['text']:
-        return True
-    elif btn2['text'] == btn5['text'] == btn8['text']:
-        return True
-    elif btn3['text'] == btn6['text'] == btn9['text']:
-        return True
+    elif btn1['text'] != "  " and btn1['text'] == btn4['text'] == btn7['text']:
+        messagebox.showinfo("Winner!")
+    elif btn2['text'] != "  " and btn2['text'] == btn5['text'] == btn8['text']:
+        messagebox.showinfo("Winner!")
+    elif btn3['text'] != "  " and btn3['text'] == btn6['text'] == btn9['text']:
+        messagebox.showinfo("Winner!")
 
     # check for diagonal win 
-    elif btn1['text'] == btn5['text'] == btn9['text']:
-        return True
-    elif btn3['text'] == btn2['text'] == btn7['text']:
-        return True
+    elif btn1['text'] != "  " and btn1['text'] == btn5['text'] == btn9['text']:
+        messagebox.showinfo("Winner!")
+    elif btn3['text'] != "  " and btn3['text'] == btn5['text'] == btn7['text']:
+        messagebox.showinfo("Winner!")
     
     else:
         return False
-        
+
+
 
 
 root.mainloop()
