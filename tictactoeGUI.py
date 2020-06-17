@@ -36,15 +36,12 @@ btn8.configure(command=lambda: update_button(btn8))
 btn9 = tk.Button(root, text = " ", height=3, width=5)
 btn9.grid(row = 2, column = 2)
 btn9.configure(command=lambda: update_button(btn9))
-btn1['font'] = myFont
-btn2['font'] = myFont
-btn3['font'] = myFont
-btn4['font'] = myFont
-btn5['font'] = myFont
-btn6['font'] = myFont
-btn7['font'] = myFont
-btn8['font'] = myFont
-btn9['font'] = myFont
+
+btnList = [btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9]
+
+for btn in btnList:
+    btn['font'] = myFont
+
 
 def update_button(btn):
     global cnt 
