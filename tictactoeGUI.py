@@ -7,7 +7,7 @@ root = Tk()
 root.geometry('400x500')  
 root.title('Tic Tac Toe')  
 cnt=0
-myFont = font.Font(size = 40)
+myFont = font.Font(size = 30)
 
 # make btns
 btn1 = tk.Button(root, text = " ", height=3, width=5)
