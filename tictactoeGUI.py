@@ -86,7 +86,7 @@ def check_x_win():
         root.quit()
 
     elif cnt==9:
-        messagebox.showinfo("Stalemate", "Stalemate")
+        messagebox.showinfo("", "Stalemate")
         root.quit()
 
 
@@ -112,7 +112,7 @@ def check_o_win():
         root.quit()
 
     elif cnt==9:
-        messagebox.showinfo("Stalemate", "Stalemate")
+        messagebox.showinfo("", "Stalemate")
         root.quit()
 
 
