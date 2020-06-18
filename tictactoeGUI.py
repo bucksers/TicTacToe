@@ -55,11 +55,12 @@ def update_button(btn):
     global cnt 
     if cnt%2 == 0:
         btn.config(text="X")
+        cnt += 1
         check_x_win()
     else:
         btn.config(text="O")
+        cnt += 1
         check_o_win()
-    cnt += 1
     btn.configure(state=DISABLED)
 
 
@@ -84,6 +85,10 @@ def check_x_win():
         messagebox.showinfo("Winner", "Player X wins!")
         root.quit()
 
+    if cnt==9:
+        messagebox.showinfo("Stalemate", "Stalemate")
+        root.quit()
+
 
 # check for Player O win
 def check_o_win():
@@ -104,6 +109,10 @@ def check_o_win():
         btn3['text'] != " " and btn3['text'] == btn5['text'] == btn7['text']
     ):
         messagebox.showinfo("Winner", "Player O wins!")
+        root.quit()
+
+    if cnt==9:
+        messagebox.showinfo("Stalemate", "Stalemate")
         root.quit()
 
 
