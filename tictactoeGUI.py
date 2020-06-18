@@ -85,7 +85,7 @@ def check_x_win():
         messagebox.showinfo("Winner", "Player X wins!")
         root.quit()
 
-    if cnt==9:
+    elif cnt==9:
         messagebox.showinfo("Stalemate", "Stalemate")
         root.quit()
 
@@ -111,7 +111,7 @@ def check_o_win():
         messagebox.showinfo("Winner", "Player O wins!")
         root.quit()
 
-    if cnt==9:
+    elif cnt==9:
         messagebox.showinfo("Stalemate", "Stalemate")
         root.quit()
 
